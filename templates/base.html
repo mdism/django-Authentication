@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>{% block title %}Asset Registration{% endblock %}</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <nav class="bg-white shadow mb-8 py-4">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex items-center justify-between">
+                <a href="{% url 'home' %}" class="text-lg font-semibold text-gray-900">Asset Registration</a>
+                <div>
+                    <a href="{% url 'device_list' %}" class="text-gray-700 px-4 py-2">Devices</a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'account_logout' %}" class="text-gray-700 px-4 py-2">Logout</a>
+                    {% else %}
+                        <a href="{% url 'account_login' %}" class="text-gray-700 px-4 py-2">Login</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto px-6 md:px-12">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

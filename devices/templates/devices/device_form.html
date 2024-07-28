@@ -1,0 +1,24 @@
+{% extends 'devices/base.html' %}
+{% block title %}{{ form.instance.pk|yesno:"Edit Device,Add Device" }}{% endblock %}
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">{{ form.instance.pk|yesno:"Edit Device,Add Device" }}</h1>
+<form method="post" class="max-w-sm mx-auto text-black">
+  {% csrf_token %}
+  {% for field in form %}
+    <div class="mb-5 text-black">
+      <label for="{{ field.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900">{{ field.label }}</label>
+      {{ field }}
+      {% if field.errors %}
+      <span class="text-red-500 text-sm">{{ field.errors.as_text }}</span>
+      {% endif %}
+    </div>
+  {% endfor %}
+  <button type="submit"  class="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
+</form>
+{% endblock %}
+
+
+<script>
+    
+
+</script>
