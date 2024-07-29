@@ -31,3 +31,7 @@
 	
 7. Run node project==> command: npm run build:css
 8. Run django project ==> python manage.py runserver
+
+
+Feel free to contact me in case of any queries
+md.ismaaill@gmail.com
