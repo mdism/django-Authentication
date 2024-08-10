@@ -16,7 +16,6 @@
                 <a href="{% url 'device_list' %}" class="text-lg font-semibold text-gray-900">DEVICE HOME</a>
                 
                 <div>
-                   
                     {% if user.is_authenticated %}
                     
                         <a href="{% url 'write_device_data' %}" class="text-gray-700 px-4 py-2">Add Data</a>
